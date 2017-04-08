@@ -1,0 +1,37 @@
+# Project: ArgVel
+# Compiler: Default GCC compiler
+# Compiler Type: MingW 3
+# Makefile created by wxDev-C++ 7.0 on 07/01/12 20:35
+
+WXLIBNAME = wxmsw28
+CPP       = g++.exe
+CC        = gcc.exe
+WINDRES   = "windres.exe"
+OBJ       = Objects/MingW/main.o Objects/MingW/ArgVel_private.res
+LINKOBJ   = "Objects/MingW/main.o" Objects/MingW/ArgVel_private.res
+LIBS      = -L"D:/Lion/Universidad/C/Compilador/wxDevcpp7_1PortableRev2/wxDevcppPortable7/App/devcpp/Lib" -mwindows -lwxmsw28 -lwxmsw28_gl -lwxtiff -lwxjpeg -lwxpng -lwxzlib -lwxregex -lwxexpat -lkernel32 -luser32 -lgdi32 -lcomdlg32 -lwinspool -lwinmm -lshell32 -lcomctl32 -lole32 -loleaut32 -luuid -lrpcrt4 -ladvapi32 -lwsock32 -lodbc32 -lopengl32  
+INCS      = -I"D:/Lion/Universidad/C/Compilador/wxDevcpp7_1PortableRev2/wxDevcppPortable7/App/devcpp/Include"
+CXXINCS   = -I"D:/Lion/Universidad/C/Compilador/wxDevcpp7_1PortableRev2/wxDevcppPortable7/App/devcpp/lib/gcc/mingw32/3.4.5/include" -I"D:/Lion/Universidad/C/Compilador/wxDevcpp7_1PortableRev2/wxDevcppPortable7/App/devcpp/include/c++/3.4.5/backward" -I"D:/Lion/Universidad/C/Compilador/wxDevcpp7_1PortableRev2/wxDevcppPortable7/App/devcpp/include/c++/3.4.5/mingw32" -I"D:/Lion/Universidad/C/Compilador/wxDevcpp7_1PortableRev2/wxDevcppPortable7/App/devcpp/include/c++/3.4.5" -I"D:/Lion/Universidad/C/Compilador/wxDevcpp7_1PortableRev2/wxDevcppPortable7/App/devcpp/include" -I"D:/Lion/Universidad/C/Compilador/wxDevcpp7_1PortableRev2/wxDevcppPortable7/App/devcpp/" -I"D:/Lion/Universidad/C/Compilador/wxDevcpp7_1PortableRev2/wxDevcppPortable7/App/devcpp/include/3rdparty/wx/plotctrl" -I"D:/Lion/Universidad/C/Compilador/wxDevcpp7_1PortableRev2/wxDevcppPortable7/App/devcpp/include/3rdparty/wx/sheet" -I"D:/Lion/Universidad/C/Compilador/wxDevcpp7_1PortableRev2/wxDevcppPortable7/App/devcpp/include/3rdparty/wx/treemultictrl" -I"D:/Lion/Universidad/C/Compilador/wxDevcpp7_1PortableRev2/wxDevcppPortable7/App/devcpp/include/3rdparty/wx/things" -I"D:/Lion/Universidad/C/Compilador/wxDevcpp7_1PortableRev2/wxDevcppPortable7/App/devcpp/include/3rdparty/wx" -I"D:/Lion/Universidad/C/Compilador/wxDevcpp7_1PortableRev2/wxDevcppPortable7/App/devcpp/include/3rdparty" -I"D:/Lion/Universidad/C/Compilador/wxDevcpp7_1PortableRev2/wxDevcppPortable7/App/devcpp/include/common/wx/msw" -I"D:/Lion/Universidad/C/Compilador/wxDevcpp7_1PortableRev2/wxDevcppPortable7/App/devcpp/include/common/wx/generic" -I"D:/Lion/Universidad/C/Compilador/wxDevcpp7_1PortableRev2/wxDevcppPortable7/App/devcpp/include/common/wx/fl" -I"D:/Lion/Universidad/C/Compilador/wxDevcpp7_1PortableRev2/wxDevcppPortable7/App/devcpp/include/common/wx/gizmos" -I"D:/Lion/Universidad/C/Compilador/wxDevcpp7_1PortableRev2/wxDevcppPortable7/App/devcpp/include/common/wx/html" -I"D:/Lion/Universidad/C/Compilador/wxDevcpp7_1PortableRev2/wxDevcppPortable7/App/devcpp/include/common/wx/mmedia" -I"D:/Lion/Universidad/C/Compilador/wxDevcpp7_1PortableRev2/wxDevcppPortable7/App/devcpp/include/"
+RCINCS    = --include-dir "D:/Lion/UNIVER~1/C/COMPIL~1/WXDEVC~1/WXDEVC~1/App/devcpp/include/common"
+BIN       = Output/MingW/ArgVel.exe
+DEFINES   = -D__WXMSW__ -D__GNUWIN32__ -D__WIN95__
+CXXFLAGS  = $(CXXINCS) $(DEFINES) -fno-exceptions -fno-pcc-struct-return -fstrict-aliasing -Wall -D__WXMSW__ -D__GNUWIN32__ -D__WIN95__   -fexpensive-optimizations -O3
+CFLAGS    = $(INCS) $(DEFINES) -fno-exceptions -fno-pcc-struct-return -fstrict-aliasing -Wall -Winvalid-pch -D__WXMSW__ -D__GNUWIN32__ -D__WIN95__   -fexpensive-optimizations -O3
+GPROF     = gprof.exe
+RM        = rm -f
+LINK      = g++.exe
+
+.PHONY: all all-before all-after clean clean-custom
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	$(RM) $(LINKOBJ) "$(BIN)"
+
+$(BIN): $(OBJ)
+	$(LINK) $(LINKOBJ) -o "$(BIN)" $(LIBS) 
+
+Objects/MingW/main.o: $(GLOBALDEPS) main.cpp
+	$(CPP) -c main.cpp -o Objects/MingW/main.o $(CXXFLAGS)
+
+Objects/MingW/ArgVel_private.res: Objects/MingW/ArgVel_private.rc 
+	$(WINDRES) --input-format=rc -o Objects/MingW/ArgVel_private.res $(RCINCS) Objects/MingW/ARGVEL~1.RC -O coff
